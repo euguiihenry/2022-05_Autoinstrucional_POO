@@ -10,7 +10,7 @@ public class Interfaces extends JFrame implements ActionListener {
 		
 		protected JLabel	question;
 		protected Image 	iconImage;
-		protected String[]	stringChoices = {"Comida", "Dinâmico", "Documentário", "Filme", "Lazer", "Livro", "Série"};
+		protected String[]	stringChoices = {"Comida", "Aleatória", "Documentário", "Filme", "Lazer", "Livro", "Série","Bricandeiras"};
 		protected JComboBox categoryList = new JComboBox(stringChoices);
 	
 	public Interfaces() {
@@ -19,7 +19,8 @@ public class Interfaces extends JFrame implements ActionListener {
 		// Question:
 			question = new JLabel();
 			question.setText("Escolha uma opção para obter uma recomendação:");
-			question.setBounds(40,60,500,20);
+			question.setBounds(40,60,400,20);
+			question.setOpaque (true);
 			
 		// Program Icon:
 			iconImage = Toolkit.getDefaultToolkit().getImage("automatizador_icon.png");
@@ -27,6 +28,9 @@ public class Interfaces extends JFrame implements ActionListener {
 		// Setting the ComboBox:
 			
 			categoryList.setBounds(41,90,290,30);
+			categoryList.setOpaque (true);
+			categoryList.setBackground ( Color.white );
+
 			
 		// Action Buttons:
 			// Generate Button:
@@ -34,11 +38,16 @@ public class Interfaces extends JFrame implements ActionListener {
 				btGenerate.setText("Gerar Recomendação");
 				btGenerate.setBounds(50,130,160,30);
 				btGenerate.addActionListener(this);	
-			
+				btGenerate.setOpaque (true);
+				btGenerate.setBackground ( Color.WHITE );
+				
 			// Exit Button:
 				btExit = new JButton();
 				btExit.setText("Sair");
 				btExit.setBounds(220,130,100,30);
+				btExit.setOpaque (true);
+				btExit.setBackground ( Color.WHITE );
+
 				
 				btExit.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent b) {
@@ -77,7 +86,7 @@ public class Interfaces extends JFrame implements ActionListener {
 		method.setComboBoxIndex(categoryList.getSelectedIndex());
 		message = method.generateDecision();
 		
-		setVisible(false);
+  	    setVisible(false);
 		JOptionPane.showMessageDialog(null, message);
 	}
 
