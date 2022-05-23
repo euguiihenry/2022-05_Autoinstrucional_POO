@@ -2,7 +2,7 @@ import java.util.*;
 
 import javax.swing.JOptionPane;
 
-public class Methods extends Interfaces {
+public class Methods extends Interface {
 	// Variables:
 	private int comboBoxIndex;
 	private String generated;
